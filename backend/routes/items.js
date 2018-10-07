@@ -25,7 +25,7 @@ router.post('/', (req,res)=>{
             res.json({msg: 'Cannot add Item', type:'error'});
         }
         else{
-            res.json({msg: 'Item Added Successfully', type:'success'});
+            res.json({msg: 'Item Created Successfully', type: 'success'});
         }
     })
 });
@@ -37,7 +37,7 @@ router.put('/:id', (req,res)=>{
             res.json({msg: 'Cannot update Item', type:'error'});
         }
         else{
-            res.json({msg: 'Item Updated Successfully', type:'success'});
+            res.json({msg: 'Item updated Successfully', type: 'success'});
         }
     });
 });

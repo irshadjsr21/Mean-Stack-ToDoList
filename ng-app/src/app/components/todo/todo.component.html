@@ -1,0 +1,21 @@
+<h2 class="text-center">Add Todos</h2>
+
+<form class="form-inline" #frm="ngForm" (ngSubmit)="addItem(frm); frm.reset();">
+  <div class="form-group">
+    <input type="text" name="name" placeholder="Enter Todo" class="form-control mr-2" ngModel>
+  </div>
+  <input type="submit" value="Add" class="btn btn-primary">
+</form>
+
+<br>
+<div class="list" *ngIf="items">
+  <ul class="list-group">
+    <li *ngFor="let item of items" class="list-group-item">
+      <div class="row"> 
+          <div class="col-2"><input type="checkbox" (change)="updateItem(item)" [checked]="item.is_done"></div>
+        <div class="col-8" [class.done]="item.is_done">{{item.name}}</div>
+        <div class="col-2"><button class="btn btn-danger" (click)="deleteItem(item)">Delete</button></div>
+      </div>
+    </li>
+  </ul>
+</div>
